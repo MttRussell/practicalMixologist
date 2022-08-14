@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from 'react';
+import axios from 'axios';
 
 function App() {
+  useEffect(() => {
+    const apiKey = `1`;
+    axios({
+      url: "www.thecocktaildb.com/api/json/v1/1/random.php",
+      method: "GET",
+      // headers: {X-API-KEY}
+      dataResponse: "json",
+      params: {
+        key: apiKey,
+        format: "json"
+      },
+    }).then((response) => {
+      console.log(response);
+    });
+    //Add an empty array here to prevent the callback function from running every time our component re-renders!
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Cocktails</h1>
     </div>
-  );
+  )
 }
 
 export default App;
