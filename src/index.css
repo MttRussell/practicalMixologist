@@ -4,11 +4,28 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+.App {
+  text-align: center;
+  margin-top: 100px;
+  
+
+}
+
+.App input {
+  width: 400px;
+  height: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: "Righteous";
+  padding-left: 10px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 body {
   margin: 0;
-  background: rgb(0,36,25);
-  background: linear-gradient(90deg, rgba(0,36,25,1) 0%, rgba(139,221,206,1) 0%, rgba(255,0,228,1) 100%);
-  font-family: 'Fredoka One';
+  background: rgba(255,0,228,1);
+  font-family: 'Righteous';
+  color: gainsboro;
 }
+
