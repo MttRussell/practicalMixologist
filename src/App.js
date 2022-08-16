@@ -3,14 +3,18 @@ import axios from 'axios';
 
 function App() {
   useEffect(() => {
-    const apiKey = `1`;
+    // const myHeaders = new Headers();
+const ingredients = "sugar";
+    // myHeaders.append("X-Api-Key", "I0byMt2hg8AjzK1rYh2DFA==WrK0dTCyskeA4FbW");
+    // console.log(myHeaders);
+    
     axios({
-      url: "www.thecocktaildb.com/api/json/v1/1/random.php",
+      url: `https://api.api-ninjas.com/v1/cocktail?ingredients=${ingredients}`,
       method: "GET",
-      // headers: {X-API-KEY}
+      headers: {"X-Api-Key": "I0byMt2hg8AjzK1rYh2DFA==WrK0dTCyskeA4FbW"},
       dataResponse: "json",
       params: {
-        key: apiKey,
+        
         format: "json"
       },
     }).then((response) => {
@@ -21,7 +25,8 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Cocktails</h1>
+      <h1>Practical Mixologist</h1>
+      <h2>What ingredient is languishing unused in your cupboard? Input below for a list of cocktails that incorporate it!</h2>
     </div>
   )
 }
