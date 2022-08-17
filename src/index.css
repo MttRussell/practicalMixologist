@@ -4,11 +4,13 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
+.wrapper{
+  max-width: 1260px;
+  width: 90%;
+  margin: 0 auto;
+}
 .App {
   text-align: center;
-  
-  
-
 }
 
 .App input {
@@ -22,12 +24,16 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
 
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
+
+
 body {
   margin: 0;
   background: rgba(255,0,228,1);
   font-family: 'Righteous';
   color: gainsboro;
   min-height: 100vh;
+  
+  
 }
 
 img {
@@ -35,6 +41,15 @@ img {
   width: 25%;
   border-radius: 5%;
   margin-top: 15px;
+}
+
+button {
+  border: none;
+  margin-left: 10px;
+  font-family: 'Righteous';
+  text-transform: uppercase;
+  color: gainsboro;
+  background-color: black;
 }
 
 
@@ -50,3 +65,18 @@ a {
   color: inherit
 }
 
+@media (max-width: 1000px) {
+  body {
+    max-width: 80%;
+  }
+  @media (max-width: 800px) {
+  body {
+    max-width: 80%;
+  }
+
+@media (max-width: 500px) {
+  body {
+    width: 80%;
+  }
+}
+}}
