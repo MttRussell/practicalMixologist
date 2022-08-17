@@ -6,11 +6,8 @@ const [ingredients, setIngredients] = useState ([]);
 const [userQuery, setUserQuery] = useState ('');
 
   useEffect(() => {
-    // const myHeaders = new Headers();
 const ingredients = "sugar";
-const instructions = 
-    // myHeaders.append("X-Api-Key", "I0byMt2hg8AjzK1rYh2DFA==WrK0dTCyskeA4FbW");
-    // console.log(myHeaders);
+    
     
     axios({
       url: `https://api.api-ninjas.com/v1/cocktail?ingredients=${ingredients}`,
@@ -29,21 +26,21 @@ const instructions =
 
   return (
     <div className="App">
+      <img src="images/old-fashioned.jpeg" alt="" />
       <h1>Practical Mixologist</h1>
       <h2>What ingredient is languishing unused in your cupboard? Input below for a selection of cocktails that incorporate it!</h2>
-      <input type="text" placeholder="Enter an ingredient to see cocktail recipes!" onChange={(event) => {setUserQuery(event.target.value);
-      console.log(event)
-      }} />
-      {/* {ingredients.map(in) => {
-
+      <input type="text" placeholder="Enter an ingredient to see cocktail recipes!"  />
+      <button >Submit!</button>
+      {/* {ingredients.(in) => {
+onChange={(event) => {setUserQuery(event.target.value);}}
       })} */}
   
-    <div>
+    
     <footer>
-        Created by Matthew Russell @ Juno College © 2022
+        Created by Matthew Russell @ <a href="https://www.junocollege.com">Juno College</a> © 2022
     </footer>
     </div>
-    </div>
+    
   )
 }
 

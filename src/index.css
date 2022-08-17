@@ -6,7 +6,7 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
 
 .App {
   text-align: center;
-  margin-top: 100px;
+  
   
 
 }
@@ -27,5 +27,25 @@ body {
   background: rgba(255,0,228,1);
   font-family: 'Righteous';
   color: gainsboro;
+  min-height: 100vh;
+}
+
+img {
+  height: 25%;
+  width: 25%;
+  
+}
+
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit
 }
 
