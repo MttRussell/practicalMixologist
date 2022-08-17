@@ -6,15 +6,15 @@ function App() {
   const [userQuery, setUserQuery] = useState('');
 
   const handleClick = () => {
-    return (
+    // return (
     
-      {ingredients.map((ingredients) => {
-        return (
+    //   {ingredients.map((ingredients) => {
+    //     return (
 
-        );
-      })}
+    //     );
+    //   })}
       
-    )
+    // )
   }
 
   useEffect(() => {
@@ -29,10 +29,13 @@ function App() {
       headers: { "X-Api-Key": "I0byMt2hg8AjzK1rYh2DFA==WrK0dTCyskeA4FbW" },
       dataResponse: "json",
       params: {
-        format: "json"
+        format: "json",
+        name: "lemon"
+
       },
     }).then((response) => {
       //update 'ingredients state with response from API
+      console.log(response.data)
       setIngredients(response.data.ingredients);
     });
     //Add an empty array here to prevent the callback function from running every time our component re-renders!
