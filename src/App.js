@@ -1,6 +1,7 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import axios from 'axios';
 import Header from './Header';
+import Footer from './Footer';
 
 function App() {
   const [ingredients, setIngredients] = useState([]);
@@ -16,9 +17,6 @@ function App() {
         dataResponse: "json",
         params: {
           format: "json",
-          
-          
-  
         },
       }).then((response) => {
         //update 'ingredients state with response from API
@@ -26,14 +24,7 @@ function App() {
         setIngredients(response.data);
       });
     }
-    
-
-
-
-
-    //Add an empty array here to prevent the callback function from running every time our component re-renders!
   
-
   return (
     <div className="App Wrapper">
       <Header />
@@ -43,23 +34,12 @@ function App() {
         {ingredients.map((ingredient) => {
           return (
             <div>
-              <p className="cocktail">{ingredient.name}</p>
-              <div className="ingr">
-              {/* <p>{ingredient.instructions}</p> */}
-              {/* {ingredient.ingredients.map((item) => {
-                return <p>{item}</p>;
-              })} */}
-              </div>
+              <p className="cocktail" key={ingredient.name}>{ingredient.name}</p>
             </div>
           );
         })}
       </div>
-      
-
-
-      <footer>
-        Created by Matthew Russell @ <a href="https://www.junocollege.com">Juno College</a> © 2022
-      </footer>
+      <Footer />
     </div>
 
   )
