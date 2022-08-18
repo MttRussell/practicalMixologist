@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Header from './Header';
 
 function App() {
   const [ingredients, setIngredients] = useState([]);
@@ -15,6 +16,7 @@ function App() {
         dataResponse: "json",
         params: {
           format: "json",
+          
           
   
         },
@@ -34,20 +36,20 @@ function App() {
 
   return (
     <div className="App Wrapper">
-      <img src="images/old-fashioned.jpeg" alt="" />
-      <h1>Practical Mixologist</h1>
-      <h2>What ingredient is languishing unused in your cupboard? Input below for a selection of cocktails that incorporate it!</h2>
+      <Header />
       <div className="searchBar">
         <input type="search" value={userQuery} onChange={(event)=> setUserQuery(event.target.value)} placeholder="Enter an ingredient to see cocktail recipes!" />
         <button type="submit" onClick={fetchData}>Submit!</button>
         {ingredients.map((ingredient) => {
           return (
             <div>
-              <p>{ingredient.name}</p>
-              {/* <p>{ingredient.instructions}</p>
-              {ingredient.ingredients.map((item) => {
+              <p className="cocktail">{ingredient.name}</p>
+              <div className="ingr">
+              {/* <p>{ingredient.instructions}</p> */}
+              {/* {ingredient.ingredients.map((item) => {
                 return <p>{item}</p>;
               })} */}
+              </div>
             </div>
           );
         })}

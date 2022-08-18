@@ -22,6 +22,11 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
   padding-left: 10px;
 }
 
+input:hover {
+  background-color: gainsboro;
+  transition: 0.7s;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 
@@ -52,6 +57,11 @@ button {
   background-color: black;
 }
 
+button:hover {
+  background-color: white;
+  color: black;
+}
+
 
 footer {
   position: absolute;
@@ -59,6 +69,12 @@ footer {
   width: 100%;
   border: none;
 }
+
+.cocktail {
+  text-transform: capitalize;  
+  display: inline;
+}
+
 
 a {
   text-decoration: none;
