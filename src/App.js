@@ -1,13 +1,17 @@
 import { useState } from 'react';
 import axios from 'axios';
 import Header from './Header';
+import Popup from './Popup';
 import Footer from './Footer';
 
 function App() {
   const [ingredients, setIngredients] = useState([]);
+  const [selected, setSelected] = useState(null);
   const [userQuery, setUserQuery] = useState('');
 
-
+  const handleClick = (name) => {
+    setSelected(name)
+  }
   
     const fetchData= () => {
       axios({
@@ -21,7 +25,7 @@ function App() {
       }).then((response) => {
         //update 'ingredients state with response from API
         console.log(response.data)
-        setIngredients(response.data);
+        setIngredients(response.data.slice(0,5));
       });
     }
   
@@ -33,12 +37,18 @@ function App() {
         <button type="submit" onClick={fetchData}>Submit!</button>
         {ingredients.map((ingredient) => {
           return (
-            <div>
+            <div className='cocktail-wrapper' onClick={() => handleClick(ingredient.name)}>
               <p className="cocktail" key={ingredient.name}>{ingredient.name}</p>
             </div>
           );
         })}
       </div>
+      {!!selected && (
+        <Popup trigger={selected} setTrigger={setSelected}>
+          <h3>cello</h3>
+        </Popup>
+        
+      )}
       <Footer />
     </div>
 

@@ -24,7 +24,7 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
 
 input:hover {
   background-color: gainsboro;
-  transition: 0.7s;
+  transition: 0.2s;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
@@ -68,17 +68,51 @@ footer {
   bottom: 0;
   width: 100%;
   border: none;
+  padding-bottom: 10px;
 }
 
 .cocktail {
   text-transform: capitalize;  
   display: inline;
+  font-size: 1.4rem;
 }
 
+.cocktail-wrapper:hover,
+.cocktail-wrapper:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+  transition: 0.2s;  
+}
 
 a {
   text-decoration: none;
   color: inherit
+}
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-inner {
+  position: relative;
+  padding: 32px;
+  width: 100%;
+  max-width: 640px;
+  background-color: #FFF;
+}
+
+.popup-inner .close-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
 }
 
 @media (max-width: 1000px) {
